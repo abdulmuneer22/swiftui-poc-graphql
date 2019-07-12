@@ -3,19 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D94C976CFE0D8FDD38BBD47A /* Pods_synup_poc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EA95A071F0F5AEFEEEE848 /* Pods_synup_poc.framework */; };
+		DF2BF6EB22D83A8700A6A7EC /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = DF2BF6EA22D83A8700A6A7EC /* schema.json */; };
+		DF7AC2B622D83B79000AA1C3 /* API.graphql in Resources */ = {isa = PBXBuildFile; fileRef = DF7AC2B522D83B79000AA1C3 /* API.graphql */; };
+		DF7AC2B822D83B93000AA1C3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7AC2B722D83B93000AA1C3 /* API.swift */; };
 		DFFF66D622D831580032CCC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF66D522D831580032CCC2 /* AppDelegate.swift */; };
 		DFFF66D822D831580032CCC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF66D722D831580032CCC2 /* SceneDelegate.swift */; };
 		DFFF66DA22D831580032CCC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF66D922D831580032CCC2 /* ContentView.swift */; };
 		DFFF66DC22D831590032CCC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFF66DB22D831590032CCC2 /* Assets.xcassets */; };
 		DFFF66DF22D831590032CCC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFFF66DE22D831590032CCC2 /* Preview Assets.xcassets */; };
 		DFFF66E222D831590032CCC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFFF66E022D831590032CCC2 /* LaunchScreen.storyboard */; };
+		DFFF66EA22D832AA0032CCC2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF66E922D832AA0032CCC2 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04A4F96DEDA48582FD8A6A75 /* Pods-synup-poc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-synup-poc.release.xcconfig"; path = "Target Support Files/Pods-synup-poc/Pods-synup-poc.release.xcconfig"; sourceTree = "<group>"; };
+		10EA95A071F0F5AEFEEEE848 /* Pods_synup_poc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_synup_poc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF2BF6EA22D83A8700A6A7EC /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		DF7AC2B522D83B79000AA1C3 /* API.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API.graphql; sourceTree = "<group>"; };
+		DF7AC2B722D83B93000AA1C3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DFFF66D222D831580032CCC2 /* synup-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "synup-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFFF66D522D831580032CCC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFFF66D722D831580032CCC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +34,8 @@
 		DFFF66DE22D831590032CCC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFFF66E122D831590032CCC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFFF66E322D831590032CCC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFFF66E922D832AA0032CCC2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EF909EC8B10C8C34C570CD6F /* Pods-synup-poc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-synup-poc.debug.xcconfig"; path = "Target Support Files/Pods-synup-poc/Pods-synup-poc.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D94C976CFE0D8FDD38BBD47A /* Pods_synup_poc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21799EFA58FB4B7D113ADD33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF909EC8B10C8C34C570CD6F /* Pods-synup-poc.debug.xcconfig */,
+				04A4F96DEDA48582FD8A6A75 /* Pods-synup-poc.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		89A09A0D53D0461F4F450B90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10EA95A071F0F5AEFEEEE848 /* Pods_synup_poc.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF2BF6E822D8392500A6A7EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DFFF66E922D832AA0032CCC2 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DF2BF6E922D8393300A6A7EC /* Graphql */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Graphql;
+			sourceTree = "<group>";
+		};
 		DFFF66C922D831580032CCC2 = {
 			isa = PBXGroup;
 			children = (
 				DFFF66D422D831580032CCC2 /* synup-poc */,
 				DFFF66D322D831580032CCC2 /* Products */,
+				21799EFA58FB4B7D113ADD33 /* Pods */,
+				89A09A0D53D0461F4F450B90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +103,9 @@
 		DFFF66D422D831580032CCC2 /* synup-poc */ = {
 			isa = PBXGroup;
 			children = (
+				DF7AC2B722D83B93000AA1C3 /* API.swift */,
+				DF2BF6E922D8393300A6A7EC /* Graphql */,
+				DF2BF6E822D8392500A6A7EC /* Views */,
 				DFFF66D522D831580032CCC2 /* AppDelegate.swift */,
 				DFFF66D722D831580032CCC2 /* SceneDelegate.swift */,
 				DFFF66D922D831580032CCC2 /* ContentView.swift */,
@@ -63,6 +113,8 @@
 				DFFF66E022D831590032CCC2 /* LaunchScreen.storyboard */,
 				DFFF66E322D831590032CCC2 /* Info.plist */,
 				DFFF66DD22D831590032CCC2 /* Preview Content */,
+				DF2BF6EA22D83A8700A6A7EC /* schema.json */,
+				DF7AC2B522D83B79000AA1C3 /* API.graphql */,
 			);
 			path = "synup-poc";
 			sourceTree = "<group>";
@@ -82,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFFF66E622D831590032CCC2 /* Build configuration list for PBXNativeTarget "synup-poc" */;
 			buildPhases = (
+				D7D93AD7A13D9B878A12A7F6 /* [CP] Check Pods Manifest.lock */,
 				DFFF66CE22D831580032CCC2 /* Sources */,
 				DFFF66CF22D831580032CCC2 /* Frameworks */,
 				DFFF66D022D831580032CCC2 /* Resources */,
+				5C63B85283352EE3411CA105 /* [CP] Embed Pods Frameworks */,
+				DF7AC2B422D83B3D000AA1C3 /* Setup Aplollo */,
 			);
 			buildRules = (
 			);
@@ -133,13 +188,75 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF2BF6EB22D83A8700A6A7EC /* schema.json in Resources */,
 				DFFF66E222D831590032CCC2 /* LaunchScreen.storyboard in Resources */,
 				DFFF66DF22D831590032CCC2 /* Preview Assets.xcassets in Resources */,
+				DF7AC2B622D83B79000AA1C3 /* API.graphql in Resources */,
 				DFFF66DC22D831590032CCC2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C63B85283352EE3411CA105 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-synup-poc/Pods-synup-poc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-synup-poc/Pods-synup-poc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-synup-poc/Pods-synup-poc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7D93AD7A13D9B878A12A7F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-synup-poc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF7AC2B422D83B3D000AA1C3 /* Setup Aplollo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Setup Aplollo";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/check-and-run-apollo-cli.sh codegen:generate --queries=\"$(find . -name '*.graphql')\" --schema=schema.json API.swift\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DFFF66CE22D831580032CCC2 /* Sources */ = {
@@ -147,8 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFFF66D622D831580032CCC2 /* AppDelegate.swift in Sources */,
+				DFFF66EA22D832AA0032CCC2 /* HomeView.swift in Sources */,
 				DFFF66D822D831580032CCC2 /* SceneDelegate.swift in Sources */,
 				DFFF66DA22D831580032CCC2 /* ContentView.swift in Sources */,
+				DF7AC2B822D83B93000AA1C3 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +401,7 @@
 		};
 		DFFF66E722D831590032CCC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF909EC8B10C8C34C570CD6F /* Pods-synup-poc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +421,7 @@
 		};
 		DFFF66E822D831590032CCC2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04A4F96DEDA48582FD8A6A75 /* Pods-synup-poc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

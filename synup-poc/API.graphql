@@ -1,0 +1,21 @@
+query searchLocations($query: String!){
+    searchLocations(query: $query){
+        edges{
+            node {
+                name
+                yearOfIncorporation
+                subCategoryName
+                street
+                phone
+                bizUrl
+                ownerName
+                ownerEmail
+                yearOfIncorporation
+                locationPhotos{
+                    url
+                }
+            }
+        }
+    }
+}
+
