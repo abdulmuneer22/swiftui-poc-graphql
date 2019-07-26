@@ -9,13 +9,19 @@
 import SwiftUI
 
 struct Search : View {
-    @State var searchText = ""
+    @Binding var searchText : String
+    
+    @Binding var graphHandler: GraphQueries
+    @Binding var searchInProgress : Bool
     
     var body: some View {
-        TextField($searchText,placeholder:Text("Start Typing To Search"))
-        .textFieldStyle(.roundedBorder)
-        .border(Color.white, width: 0,cornerRadius: 16)
-        .frame(width: 400, height: 40)
+        TextField("Search Here" , text: $searchText)
+            .textFieldStyle(.roundedBorder)
+            .border(Color.white, width: 0,cornerRadius: 16)
+            .frame(width: 400, height: 40)
+        //
+        
+        
         
     }
 }

@@ -17,6 +17,7 @@
 		DF7AC2C022D8418E000AA1C3 /* GraphQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7AC2BF22D8418E000AA1C3 /* GraphQueries.swift */; };
 		DF7AC2C322D8456A000AA1C3 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7AC2C222D8456A000AA1C3 /* SearchBar.swift */; };
 		DF7AC2C522D872F7000AA1C3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7AC2C422D872F7000AA1C3 /* AppState.swift */; };
+		DF81490622EAC06C00711D17 /* SelectedBusinessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81490522EAC06C00711D17 /* SelectedBusinessView.swift */; };
 		DFFF66D622D831580032CCC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF66D522D831580032CCC2 /* AppDelegate.swift */; };
 		DFFF66D822D831580032CCC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF66D722D831580032CCC2 /* SceneDelegate.swift */; };
 		DFFF66DA22D831580032CCC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF66D922D831580032CCC2 /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 		DF7AC2BF22D8418E000AA1C3 /* GraphQueries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQueries.swift; sourceTree = "<group>"; };
 		DF7AC2C222D8456A000AA1C3 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		DF7AC2C422D872F7000AA1C3 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		DF81490522EAC06C00711D17 /* SelectedBusinessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectedBusinessView.swift; path = "../../../../../../System/Volumes/Data/Users/synup/Desktop/synup-poc/synup-poc/Views/SelectedBusinessView.swift"; sourceTree = "<group>"; };
 		DFFF66D222D831580032CCC2 /* synup-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "synup-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFFF66D522D831580032CCC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFFF66D722D831580032CCC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				DFFF66E922D832AA0032CCC2 /* HomeView.swift */,
 				DF0E619522E839CA00B07DBA /* Search.swift */,
 				DF0E619822E8609000B07DBA /* ImageLoader.swift */,
+				DF81490522EAC06C00711D17 /* SelectedBusinessView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				DFFF66DA22D831580032CCC2 /* ContentView.swift in Sources */,
 				DF7AC2C322D8456A000AA1C3 /* SearchBar.swift in Sources */,
 				DF0E619622E839CA00B07DBA /* Search.swift in Sources */,
+				DF81490622EAC06C00711D17 /* SelectedBusinessView.swift in Sources */,
 				DF7AC2C022D8418E000AA1C3 /* GraphQueries.swift in Sources */,
 				DF7AC2B822D83B93000AA1C3 /* API.swift in Sources */,
 			);

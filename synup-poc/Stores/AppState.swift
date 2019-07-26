@@ -26,11 +26,7 @@ class AppStateStore: BindableObject {
     
     
     var selectedBusiness : Business?
-    var showSearchResults : Bool = false {
-        didSet {
-            self.willChange.send(self)
-        }
-    }
+    
     
     func selectBusiness(business: Business){
         selectedBusiness = business

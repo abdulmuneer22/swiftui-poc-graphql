@@ -8,87 +8,113 @@
 
 import SwiftUI
 import UIKit
+import Combine
 
 
+
+let keyWindow = UIApplication.shared.connectedScenes
+        .filter({$0.activationState == .foregroundActive})
+        .map({$0 as? UIWindowScene})
+        .compactMap({$0})
+        .first?.windows
+        .filter({$0.isKeyWindow}).first
 
 struct HomeView : View {
     
-    @State private var searchQuery: String = ""
-    @State private var graphHandler: GraphQueries = GraphQueries()
-    @State private var selectedIndex : String = ""
+    
+    @State var graphHandler : GraphQueries = GraphQueries()
+    
+    @State var didSelectBusiness : Bool = false
+    
+    @State var searchInProgress : Bool = false
+    
+    @State var showSearchResults : Bool = false
+    
+    @State var appState : AppStateStore = AppStateStore()
+    
+    @State var selectedBusiness : Business = Business(id: "", name: "Random Bookshop", street: "#12", city: "Bangalore", state_name: "Karnataka", postal_code: "560078", phone: "+98424243", latitude: "", longitude: "", biz_url: "https://fb.com/randomshop", owner_name: "James Franco", facebook_url: "https://fb.com/randomshop", twitter_url: "https://tw.com/randomshop", description: "Some Random shop for display purpose", tagline: "my random shop", additional_info: "No Additional Info Found", year_of_incorporation: "1900", sub_category_id: 0, hide_address: false, business_logo: "", business_cover: "", ownerEmail: "owner@nodomain.com", locationPhotos: [LocationPhoto(url: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5577569ce4b017853ece68b2%2F400x400.jpg%3Ffit%3Dscale%26background%3D000000")])
     
     
-    @EnvironmentObject var appState : AppStateStore
+    
+    
+    /******* Subscribers *****/
     
     
     
-    var body: some View {
+    
+    
+    var body : some View {
         
-            Search(searchText: "")
+        _ = searchTextPublisher
+            .filter { $0.count > 3}
+            .sink { (Value) in
+                self.graphHandler.getBusinessData(queryString: Value)
+                self.showSearchResults = true
+                self.didSelectBusiness = false
+        }
+        
+        
+        return VStack{
+            SearchBar()
             
-            
-            
-            if appState.showSearchResults {
-                
-                List(self.graphHandler.businesses,id: \.id){  business in
-                    VStack{
-                        Button(action: {
-                            self.appState.selectBusiness(business: business)
-                            self.appState.showSearchResults = false
-                            self.graphHandler.businesses = []
-//                            UIApplication.shared.keyWindow?.endEditing(true)
-                        }) {
-                            Text(business.name)
-                        }
-                        
-                    }
-                    
-                }
-            }
-            
-            
-            
-            
-            if appState.selectedBusiness != nil {
-                TabbedViewItems(appState: _appState)
-            }else{
+            if !self.showSearchResults && !self.didSelectBusiness {
                 Spacer()
             }
             
+            if self.showSearchResults {
+                SearchResults(didSelectBusiness : $didSelectBusiness , graphHandler : $graphHandler, showSearchResults: $showSearchResults , appState : $appState)
+            }
+            
+            
+            
+            if self.didSelectBusiness {
+                SelectedBusinessView(appState : $appState)
+            }
+            
+            
+            
             
         }
         
-        
-        
     }
+    
     
     
     
 }
 
 
+struct businessName {
+    var name: String = ""
+    var id : String = "0"
+}
 
 
-
-struct InformationView : View {
-    @EnvironmentObject var appState : AppStateStore
+struct SearchResults : View {
+    
+    @Binding var didSelectBusiness : Bool
+    @Binding var graphHandler: GraphQueries
+    @Binding var showSearchResults: Bool
+    @Binding var appState : AppStateStore
+    
+    //    var businessNames : [businessName] = [
+    //        businessName(name: "Om Book Shop"),
+    //        businessName(name: "Om Book Shop"),
+    //        businessName(name: "Om Book Shop"),
+    //        businessName(name: "Om Book Shop"),
+    //        businessName(name: "Om Book Shop")
+    //    ]
     
     var body : some View {
-        GeometryReader { geometry in
-            VStack(alignment: .leading) {
-                Text("Business Name : \(self.appState.selectedBusiness?.name ?? "")")
-                Text("Owner Email : \(self.appState.selectedBusiness?.ownerEmail ?? "")")
-                Text("Street : \(self.appState.selectedBusiness?.street ?? "")")
-                Text("City : \(self.appState.selectedBusiness?.city ?? "")")
-                Text("State Name : \(self.appState.selectedBusiness?.state_name ?? "")")
-                Text("Postal Code : \(self.appState.selectedBusiness?.postal_code ?? "")")
-                Text("Phone Number : \(self.appState.selectedBusiness?.phone ?? "")")
-                
-                if (self.appState.selectedBusiness?.locationPhotos.count ?? 0) > 0 {
-                    ImageWidget(imageUrl: (self.appState.selectedBusiness?.locationPhotos[0].url) ?? "")
-                }
-                
-                
+        List(graphHandler.businesses,id: \.id){ business in
+            Button(action: {
+                self.didSelectBusiness = true
+                self.showSearchResults = false
+                searchTextClearPublisher.send(true)
+                self.appState.selectBusiness(business: business)
+                keyWindow?.endEditing(true)
+            }){
+                Text(business.name)
             }
             
         }
@@ -97,36 +123,6 @@ struct InformationView : View {
 
 
 
-
-struct BusinessInformation : View {
-    @State var business : Business
-    var body: some View {
-        return Text(business.name)
-    }
-}
-
-struct BusinessDetails : View {
-    @State var business : Business
-    var body: some View {
-        return Text("Business Details")
-    }
-}
-
-
-struct OperationHours : View {
-    @State var business : Business
-    var body: some View {
-        return Text("Operation Hours Details")
-    }
-}
-
-
-struct Media : View {
-    @State var business : Business
-    var body: some View {
-        return Text("Media Items")
-    }
-}
 
 
 
@@ -139,51 +135,6 @@ struct HomeView_Previews : PreviewProvider {
 }
 #endif
 
-struct TabbedViewItems : View {
-    
-    @EnvironmentObject var appState : AppStateStore
-    
-    var body: some View {
-        return TabbedView {
-            InformationView(appState: _appState)
-                .tabItem({
-                    VStack{
-                        Text("Information")
-                        Image(systemName: "info")
-                    }
-                })
-                .tag(0)
-            
-            
-            Text("2")
-                .tabItem({
-                    VStack{
-                        Text("2")
-                        Image(systemName: "arrow.up.right.circle.fill")
-                    }
-                })
-                .tag(1)
-            
-            
-            
-            Text("3")
-                .tabItem({
-                    VStack{
-                        Text("3")
-                        Image(systemName: "rectangle.stack.person.crop")
-                    }
-                })
-                .tag(2)
-            
-            Text("4")
-                .tabItem({
-                    VStack{
-                        Text("4")
-                        Image(systemName: "camera.fill")
-                        
-                    }
-                })
-                .tag(3)
-        }
-    }
-}
+
+
+
