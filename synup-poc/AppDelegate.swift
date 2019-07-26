@@ -7,6 +7,19 @@
 //
 
 import UIKit
+import Apollo
+
+
+let apollo: ApolloClient = {
+    let configuration = URLSessionConfiguration.default
+    // Add additional headers as needed
+    configuration.httpAdditionalHeaders = ["Authorization": "API ZZmVKpGPe25ZXYF3U_0eQYUXSh0"]
+    
+    let url = URL(string: "http://sandbox-lb3.env.synup.com/graphql")!
+    
+    return ApolloClient(networkTransport: HTTPNetworkTransport(url: url, configuration: configuration))
+}()
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
