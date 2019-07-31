@@ -26,29 +26,3 @@ struct Search : View {
     }
 }
 
-
-
-//struct Search : View {
-//    @State var searchText: String
-//    @Binding var graphHandler: GraphQueries
-//
-//    @EnvironmentObject var appState : AppStateStore
-//
-//    var body: some View {
-//
-//        TextField($searchText,placeholder: Text("Search Here"),onEditingChanged: {
-//            (Bool) in
-//            if(self.searchText.count > 3){
-//                self.graphHandler.getBusinessData(queryString: self.searchText)
-//                                self.appState.showSearchResults = true
-//            }
-//        })
-//
-////        TextField("Search Text", text: $searchText)
-//
-//
-//    }
-//}
-//
-//
-//

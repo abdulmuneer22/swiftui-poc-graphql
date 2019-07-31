@@ -10,16 +10,9 @@ import SwiftUI
 import Combine
 import Foundation
 
-class ImageLoader : BindableObject {
+class ImageLoader : ObservableObject {
     
-    
-    
-    var willChange = PassthroughSubject<Data,Never>()
-    var data = Data() {
-        didSet{
-            willChange.send(data)
-        }
-    }
+    var data = Data()
     
     init(imageUrl : String) {
         // fetch image with URLSession Here
@@ -36,7 +29,7 @@ class ImageLoader : BindableObject {
 
 
 struct ImageWidget : View {
-    @ObjectBinding var imageLoader : ImageLoader
+    @ObservedObject var imageLoader : ImageLoader
     
     init(imageUrl : String) {
         imageLoader = ImageLoader(imageUrl: imageUrl)

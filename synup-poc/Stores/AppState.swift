@@ -13,25 +13,21 @@
 import Combine
 import SwiftUI
 
-
-
-
-class AppStateStore: BindableObject {
+class AppStateStore: ObservableObject {
     
-//    var selectedBusiness: Business = Business(id: "String", name: "String", street: "", city: "", state_name: "", postal_code: "", phone: "", latitude: "", longitude: "", biz_url: "", owner_name: "", facebook_url: "", twitter_url: "", description: "", tagline: "", additional_info: "", year_of_incorporation: "", sub_category_id: 0, hide_address: false, business_logo: "", business_cover: "", ownerEmail: ""
-//    )
-    
-    
-    var willChange = PassthroughSubject<AppStateStore,Never>()
-    
-    
+    // user can search for businesses , this one represents the one he selected at given poit of time
     var selectedBusiness : Business?
     
+    // user can switch between tabs , this one represents the tab selected , this is a two way binding
+    @Published
+    var selectedTab : Int = 1
     
     func selectBusiness(business: Business){
         selectedBusiness = business
-        willChange.send(self)
     }
+    
+    
+    
     
     
     

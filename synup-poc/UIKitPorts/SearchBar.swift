@@ -13,10 +13,18 @@ import Combine
 
 
 let searchTextPublisher = PassthroughSubject<String,Never>()
+let businessNamePublisher = PassthroughSubject<Business,Never>()
 
-let searchTextClearPublisher = PassthroughSubject<Bool,Never>()
+
+
+
+
+
 
 struct SearchBar : UIViewRepresentable {
+    
+    @Binding var appState : AppStateStore
+    
     
     func makeUIView(context: UIViewRepresentableContext<SearchBar>) -> UISearchBar {
         let sb = UISearchBar()
@@ -33,14 +41,17 @@ struct SearchBar : UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UISearchBar, context: UIViewRepresentableContext<SearchBar>) {
+        uiView.text = appState.selectedBusiness?.name
         // update view here
         // setting a listener for action to clear ui searchbar text
-        _ = searchTextClearPublisher
-            .filter{$0 == true}
-            .sink(receiveValue: { (value) in
-                uiView.text = nil
-            })
+        //        _ = businessNamePublisher
+        //            .sink(receiveValue: { (value) in
+        //                uiView.text = value.name
+        //            })
+        //        uiView.text = businessSelected.name
         
+        
+        //
     }
     
     func makeCoordinator() -> Cordinator {
@@ -55,12 +66,12 @@ struct SearchBar : UIViewRepresentable {
 
 class Cordinator : NSObject , UISearchBarDelegate {
     
-    
+    @Published var userTextEntry : String = ""
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         // publish searchtext changes here
-        print(searchText)
+        
         searchTextPublisher.send(searchText)
         
     }

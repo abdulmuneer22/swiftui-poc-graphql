@@ -43,6 +43,7 @@ struct Business {
     let business_cover: String
     let ownerEmail : String
     let locationPhotos : [LocationPhoto]
+    let reviews : [Interaction]
     
     
     //    let business_hours : [BusinessHour]?

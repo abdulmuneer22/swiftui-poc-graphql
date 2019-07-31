@@ -10,9 +10,10 @@ import SwiftUI
 
 struct SelectedBusinessView : View {
     @Binding var appState : AppStateStore
+    @Binding var graphHandler : GraphQueries
     
     var body: some View {
-        TabbedViewItems(appState : $appState)
+        TabbedViewItems(appState : $appState , graphHandler : $graphHandler)
     }
 }
 
@@ -59,48 +60,52 @@ struct TabbedViewItems : View {
     
     
     @Binding var appState : AppStateStore
+    @Binding var graphHandler : GraphQueries
+    
     
     var body: some View {
-        return TabbedView {
-            BusinessDataView(appState : $appState)
-                .tabItem({
-                    VStack{
-                        Text("Information")
-                        Image(systemName: "info")
-                    }
-                })
-                .tag(0)
-            
-            
-            Text("2")
-                .tabItem({
-                    VStack{
-                        Text("2")
-                        Image(systemName: "arrow.up.right.circle.fill")
-                    }
-                })
-                .tag(1)
-            
-            
-            
-            Text("3")
-                .tabItem({
-                    VStack{
-                        Text("3")
-                        Image(systemName: "rectangle.stack.person.crop")
-                    }
-                })
-                .tag(2)
-            
-            Text("4")
-                .tabItem({
-                    VStack{
-                        Text("4")
-                        Image(systemName: "camera.fill")
-                        
-                    }
-                })
-                .tag(3)
-        }
-    }
+        Text("test")
+//        return TabView(selection: $appState.selectedTab ) {
+//            BusinessDataView(appState : $appState)
+//                .tabItem({
+//                    VStack{
+//                        Text("Information")
+//                        Image(systemName: "info")
+//                    }
+//                })
+//                .tag(0)
+//
+//
+//            InteractionsView(graphHandler: $graphHandler)
+//                .tabItem({
+//                    VStack{
+//                        Text("2")
+//                        Image(systemName: "arrow.up.right.circle.fill")
+//                    }
+//                })
+//                .tag(1)
+//
+//
+//
+//            Text("3")
+//                .tabItem({
+//                    VStack{
+//                        Text("3")
+//                        Image(systemName: "rectangle.stack.person.crop")
+//                    }
+//                })
+//                .tag(2)
+//
+//            Text("4")
+//                .tabItem({
+//                    VStack{
+//                        Text("4")
+//                        Image(systemName: "camera.fill")
+//
+//                    }
+//                })
+//                .tag(3)
+//        }
+//    }
+}
 }

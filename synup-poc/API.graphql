@@ -21,3 +21,23 @@ query searchLocations($query: String!){
     }
 }
 
+query getInteractions($locationId: ID!){
+    interactions(locationId : $locationId){
+        totalCount
+        edges{
+          node{
+            id
+            title
+            content
+            source
+            authorName
+            authorAvatar
+            rating
+            date
+            photoUrl
+            photoThumbnailUrl
+          }
+        }
+      }
+}
+

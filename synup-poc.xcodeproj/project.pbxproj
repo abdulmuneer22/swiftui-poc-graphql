@@ -11,6 +11,7 @@
 		DF0E619622E839CA00B07DBA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0E619522E839CA00B07DBA /* Search.swift */; };
 		DF0E619922E8609000B07DBA /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0E619822E8609000B07DBA /* ImageLoader.swift */; };
 		DF2BF6EB22D83A8700A6A7EC /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = DF2BF6EA22D83A8700A6A7EC /* schema.json */; };
+		DF700EFB22EEA2060014D0B8 /* InteractionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF700EFA22EEA2060014D0B8 /* InteractionsView.swift */; };
 		DF7AC2B622D83B79000AA1C3 /* API.graphql in Resources */ = {isa = PBXBuildFile; fileRef = DF7AC2B522D83B79000AA1C3 /* API.graphql */; };
 		DF7AC2B822D83B93000AA1C3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7AC2B722D83B93000AA1C3 /* API.swift */; };
 		DF7AC2BD22D83E4B000AA1C3 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7AC2BC22D83E4B000AA1C3 /* Business.swift */; };
@@ -18,6 +19,7 @@
 		DF7AC2C322D8456A000AA1C3 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7AC2C222D8456A000AA1C3 /* SearchBar.swift */; };
 		DF7AC2C522D872F7000AA1C3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7AC2C422D872F7000AA1C3 /* AppState.swift */; };
 		DF81490622EAC06C00711D17 /* SelectedBusinessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81490522EAC06C00711D17 /* SelectedBusinessView.swift */; };
+		DF81490822EAFE2500711D17 /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81490722EAFE2500711D17 /* Interaction.swift */; };
 		DFFF66D622D831580032CCC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF66D522D831580032CCC2 /* AppDelegate.swift */; };
 		DFFF66D822D831580032CCC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF66D722D831580032CCC2 /* SceneDelegate.swift */; };
 		DFFF66DA22D831580032CCC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFF66D922D831580032CCC2 /* ContentView.swift */; };
@@ -33,6 +35,7 @@
 		DF0E619522E839CA00B07DBA /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		DF0E619822E8609000B07DBA /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		DF2BF6EA22D83A8700A6A7EC /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		DF700EFA22EEA2060014D0B8 /* InteractionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InteractionsView.swift; path = "../../../../../../System/Volumes/Data/Users/synup/Desktop/synup-poc/synup-poc/Views/InteractionsView.swift"; sourceTree = "<group>"; };
 		DF7AC2B522D83B79000AA1C3 /* API.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API.graphql; sourceTree = "<group>"; };
 		DF7AC2B722D83B93000AA1C3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DF7AC2BC22D83E4B000AA1C3 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		DF7AC2C222D8456A000AA1C3 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		DF7AC2C422D872F7000AA1C3 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		DF81490522EAC06C00711D17 /* SelectedBusinessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectedBusinessView.swift; path = "../../../../../../System/Volumes/Data/Users/synup/Desktop/synup-poc/synup-poc/Views/SelectedBusinessView.swift"; sourceTree = "<group>"; };
+		DF81490722EAFE2500711D17 /* Interaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Interaction.swift; path = "../../../../../../System/Volumes/Data/Users/synup/Desktop/synup-poc/synup-poc/Model/Interaction.swift"; sourceTree = "<group>"; };
 		DFFF66D222D831580032CCC2 /* synup-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "synup-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFFF66D522D831580032CCC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFFF66D722D831580032CCC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 				DF0E619522E839CA00B07DBA /* Search.swift */,
 				DF0E619822E8609000B07DBA /* ImageLoader.swift */,
 				DF81490522EAC06C00711D17 /* SelectedBusinessView.swift */,
+				DF700EFA22EEA2060014D0B8 /* InteractionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				DF7AC2BC22D83E4B000AA1C3 /* Business.swift */,
+				DF81490722EAFE2500711D17 /* Interaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,7 +291,7 @@
 		};
 		DF7AC2B422D83B3D000AA1C3 /* Setup Aplollo */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -297,7 +303,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/check-and-run-apollo-cli.sh codegen:generate --queries=\"$(find . -name '*.graphql')\" --schema=schema.json API.swift\n";
 		};
@@ -314,10 +320,12 @@
 				DFFF66D822D831580032CCC2 /* SceneDelegate.swift in Sources */,
 				DF7AC2BD22D83E4B000AA1C3 /* Business.swift in Sources */,
 				DF0E619922E8609000B07DBA /* ImageLoader.swift in Sources */,
+				DF81490822EAFE2500711D17 /* Interaction.swift in Sources */,
 				DFFF66DA22D831580032CCC2 /* ContentView.swift in Sources */,
 				DF7AC2C322D8456A000AA1C3 /* SearchBar.swift in Sources */,
 				DF0E619622E839CA00B07DBA /* Search.swift in Sources */,
 				DF81490622EAC06C00711D17 /* SelectedBusinessView.swift in Sources */,
+				DF700EFB22EEA2060014D0B8 /* InteractionsView.swift in Sources */,
 				DF7AC2C022D8418E000AA1C3 /* GraphQueries.swift in Sources */,
 				DF7AC2B822D83B93000AA1C3 /* API.swift in Sources */,
 			);
